@@ -1,1 +1,1 @@
-# amt-pj-ss25-react-app
+# amt-pj-ss25-notes
