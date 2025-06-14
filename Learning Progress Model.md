@@ -35,7 +35,7 @@ Indicates how well the learner performed based on actual results after a module 
 
 ## Overall Learning Progress
 
-(Weight₁ * Completion Rate) + (Weight₂ * Mastery Level) + (Weight₃ * Performance Level)
+```(Weight₁ * Completion Rate) + (Weight₂ * Mastery Level) + (Weight₃ * Performance Level)```
 
 **Notes:**
 
