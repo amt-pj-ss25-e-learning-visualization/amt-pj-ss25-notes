@@ -1,7 +1,11 @@
 #### Main functionality
 
-- **Continue within a partially completed course**  
-  Recommend modules from a course where the student has already completed some content, assuming they haven't finished the course yet.
+- ~**Continue within a partially completed course**  
+  Recommend modules from a course where the student has already completed some content, assuming they haven't finished the course yet.~
+
+- **Recommend based on similar students (Jaccard Index)**  
+  Recommend modules that students with a similar learning history have completed, but the current student has not.  
+  → Based on overlap in completed modules across students (using statements with verb `"completed"`).  
 
 - **Recommend based on topic interest (utilizing LOM)**  
   When a student has completed several modules with specific keywords (e.g., `botanic`, `mathematics`), we assume an interest in that subject.  
