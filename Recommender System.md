@@ -1,23 +1,14 @@
-#### Main functionality
-
-- ~**Continue within a partially completed course**  
-  Recommend modules from a course where the student has already completed some content, assuming they haven't finished the course yet.~
+#### Implemented Recommenders
 
 - **Recommend based on similar students (Jaccard Index)**  
   Recommend modules that students with a similar learning history have completed, but the current student has not.  
   → Based on overlap in completed modules across students (using statements with verb `"completed"`).  
 
-- **Recommend based on topic interest (utilizing LOM)**  
-  When a student has completed several modules with specific keywords (e.g., `botanic`, `mathematics`), we assume an interest in that subject.  
+- **Recommend based on topic interest**  
+  When a student has completed several modules that belong to the same subject (e.g., `horticulture`, `it`), we assume an interest in that subject.  
   → Recommend modules from other courses that share similar subjects.  
-  → Requires categorization of all modules via the "keywords"-field in the LOM metadata.
+  → Utilizes the IMS Common Cartridge element `catalog` in the manifest file of the corresponding course  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→Stored within column `subject` in the `courses` database table.
 
 - **Review based on forgetting curve**  
-  Recommend repeating previously completed modules based on a model of forgetting (e.g., the Ebbinghaus forgetting curve) to help consolidate knowledge.
-
-The first two functions will require more synthetic courses and modules besides the current "Baumchirurg"-course. 
-
-#### Optional
-
-- **Review based on poor performance**  
-  Recommend repeating a module if the student performed poorly (e.g., score falls below a set threshold compared to the average).
+  Recommend repeating previously completed modules based on the last module performance (assumes good score means less forgetting) and the `forgettingEffect` function that is being used for calculating the `masteryEbbinghaus` metric.
